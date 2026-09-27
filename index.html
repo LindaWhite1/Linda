@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LINDA | عجينة طبيعية 100% لإزالة الشعر بدون ألم</title>
+<meta name="description" content="LINDA - عجينة طبيعية 100% لإزالة الشعر من الجذور بدون ألم، مناسبة للوجه والمناطق الحساسة. متوفرة بروائح الفحم، الورد، اللافندر والياسمين.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#141210;
+    --bg-soft:#1d1a17;
+    --ivory:#f4eee1;
+    --ivory-soft:#eae2d0;
+    --ink:#201d19;
+    --gold:#c8a15c;
+    --gold-light:#e6d3a5;
+    --line:rgba(230,211,165,0.16);
+
+    --c-charcoal:#3a3733;
+    --c-charcoal-soft:#211f1c;
+    --c-rose:#b56a86;
+    --c-rose-soft:#3a2229;
+    --c-lavender:#8577ab;
+    --c-lavender-soft:#25213a;
+    --c-jasmine:#5c7f5f;
+    --c-jasmine-soft:#1c2620;
+
+    --active: var(--c-charcoal);
+    --active-soft: var(--c-charcoal-soft);
+
+    --container: 1180px;
+    --radius: 2px;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ivory);
+    font-family:'Tajawal', sans-serif;
+    font-weight:400;
+    line-height:1.75;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4,.display{
+    font-family:'Cairo', sans-serif;
+    line-height:1.25;
+    font-weight:800;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  .container{max-width:var(--container); margin:0 auto; padding:0 32px;}
+  section{position:relative;}
+  .gold{color:var(--gold);}
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:16px 34px;
+    font-family:'Cairo', sans-serif; font-weight:700; font-size:16px;
+    border-radius:var(--radius);
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:transform .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--gold); color:#191510;}
+  .btn-primary:hover{background:var(--gold-light);}
+  .btn-outline{border-color:var(--line); color:var(--ivory); background:transparent;}
+  .btn-outline:hover{border-color:var(--gold); color:var(--gold-light);}
+  .eyebrow{
+    font-family:'Cairo', sans-serif; font-weight:700; font-size:14px;
+    color:var(--gold); letter-spacing:.02em; margin-bottom:14px; display:block;
+  }
+  .sec-head{max-width:640px; margin-bottom:56px;}
+  .sec-head p{color:var(--ivory-soft); opacity:.75; font-size:17px; margin-top:16px; max-width:520px;}
+  .sec-head h2{font-size:clamp(30px,4vw,44px);}
+
+  /* ===== NAV ===== */
+  header{
+    position:fixed; top:0; right:0; left:0; z-index:100;
+    padding:22px 0;
+    background:transparent;
+    transition:background .35s ease, padding .35s ease, box-shadow .35s ease;
+  }
+  header.scrolled{
+    background:rgba(20,18,16,0.92);
+    backdrop-filter:blur(10px);
+    padding:14px 0;
+    box-shadow:0 1px 0 var(--line);
+  }
+  .nav-inner{display:flex; align-items:center; justify-content:space-between; gap:24px;}
+  .logo{font-family:'Cairo',sans-serif; font-weight:900; font-size:26px; letter-spacing:.04em; color:var(--ivory);}
+  .logo span{color:var(--gold);}
+  nav ul{display:flex; gap:34px; font-family:'Cairo',sans-serif; font-weight:600; font-size:15px;}
+  nav a{opacity:.85; transition:opacity .2s, color .2s;}
+  nav a:hover{opacity:1; color:var(--gold-light);}
+  .nav-right{display:flex; align-items:center; gap:18px;}
+  .icon-link{
+    width:38px; height:38px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    border:1px solid var(--line); color:var(--ivory-soft);
+    transition:border-color .2s, color .2s, transform .2s;
+  }
+  .icon-link:hover{border-color:var(--gold); color:var(--gold-light); transform:translateY(-2px);}
+  .icon-link svg{width:16px; height:16px;}
+  .burger{display:none; width:26px; height:20px; position:relative; cursor:pointer; border:none; background:none;}
+  .burger span{position:absolute; right:0; left:0; height:2px; background:var(--ivory); border-radius:2px;}
+  .burger span:nth-child(1){top:0;} .burger span:nth-child(2){top:9px;} .burger span:nth-child(3){top:18px;}
+
+  /* ===== HERO ===== */
+  .hero{
+    min-height:100vh;
+    display:flex; align-items:center;
+    position:relative;
+    padding-top:120px; padding-bottom:80px;
+  }
+  .hero::before{
+    content:''; position:absolute; inset:0;
+    background:
+      linear-gradient(180deg, rgba(15,13,11,0.55) 0%, rgba(15,13,11,0.82) 55%, var(--bg) 100%),
+      url('images/charcoal.jpg') center 30% / cover no-repeat;
+    z-index:-1;
+  }
+  .hero-inner{max-width:640px;}
+  .hero-kicker{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:'Cairo',sans-serif; font-weight:600; font-size:14px;
+    color:var(--gold-light); margin-bottom:22px;
+    border:1px solid var(--line); padding:8px 18px; border-radius:30px;
+  }
+  .hero-kicker .dot{width:6px; height:6px; border-radius:50%; background:var(--gold);}
+  .hero h1{font-size:clamp(38px,6vw,64px); color:var(--ivory);}
+  .hero h1 em{font-style:normal; color:var(--gold);}
+  .hero .lede{font-size:18px; color:var(--ivory-soft); opacity:.85; margin:24px 0 36px; max-width:520px;}
+  .hero-actions{display:flex; gap:16px; flex-wrap:wrap;}
+  .hero-stats{display:flex; gap:44px; margin-top:64px; flex-wrap:wrap;}
+  .hero-stats div b{display:block; font-family:'Cairo',sans-serif; font-size:26px; font-weight:800; color:var(--gold-light);}
+  .hero-stats div span{font-size:13px; color:var(--ivory-soft); opacity:.7;}
+
+  /* ===== MARQUEE STRIP ===== */
+  .strip{
+    background:var(--bg-soft);
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    padding:26px 0; overflow:hidden;
+  }
+  .strip-track{display:flex; gap:64px; width:max-content; animation:scroll 32s linear infinite;}
+  .strip-track span{
+    font-family:'Cairo',sans-serif; font-weight:700; font-size:15px;
+    display:flex; align-items:center; gap:14px; color:var(--ivory-soft); opacity:.8; white-space:nowrap;
+  }
+  .strip-track span::before{content:'✦'; color:var(--gold);}
+  @keyframes scroll{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+
+  /* ===== ABOUT ===== */
+  .about{padding:130px 0; background:var(--bg);}
+  .about-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:70px; align-items:center;}
+  .about-media{position:relative;}
+  .about-media img{border-radius:var(--radius);}
+  .about-media .frame{
+    position:absolute; inset:20px -20px -20px 20px; border:1px solid var(--gold); z-index:-1;
+  }
+  .about-copy .eyebrow{margin-bottom:18px;}
+  .about-copy h2{font-size:clamp(28px,3.6vw,40px); margin-bottom:26px;}
+  .about-copy p{color:var(--ivory-soft); opacity:.82; font-size:16.5px; margin-bottom:18px; max-width:520px;}
+  .pillars{margin-top:40px; display:grid; grid-template-columns:1fr 1fr; gap:26px 34px;}
+  .pillar{display:flex; gap:14px; align-items:flex-start;}
+  .pillar .ic{
+    width:44px; height:44px; flex:none; border-radius:50%; border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; color:var(--gold);
+  }
+  .pillar .ic svg{width:20px; height:20px;}
+  .pillar h4{font-family:'Cairo',sans-serif; font-size:16px; font-weight:700; margin-bottom:4px; color:var(--ivory);}
+  .pillar p{font-size:14px; opacity:.65; margin:0; color:var(--ivory-soft);}
+
+  /* ===== SCENTS ===== */
+  .scents{padding:130px 0 150px; background:var(--active-soft); transition:background 1s ease;}
+  .scent-layout{display:grid; grid-template-columns:0.85fr 1.15fr; gap:0; align-items:stretch; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;}
+  .scent-tabs{background:rgba(0,0,0,0.18); padding:10px;}
+  .scent-tab{
+    display:flex; align-items:center; gap:18px; width:100%; text-align:right;
+    padding:22px 20px; border-radius:var(--radius); cursor:pointer;
+    background:transparent; border:none; color:var(--ivory);
+    transition:background .3s ease;
+  }
+  .scent-tab .swatch{width:14px; height:14px; border-radius:50%; flex:none; box-shadow:0 0 0 3px rgba(255,255,255,0.08);}
+  .scent-tab .txt b{display:block; font-family:'Cairo',sans-serif; font-weight:800; font-size:19px;}
+  .scent-tab .txt span{font-size:13px; opacity:.6;}
+  .scent-tab.active{background:rgba(255,255,255,0.07);}
+  .scent-tab.active .txt b{color:var(--gold-light);}
+  .scent-stage{position:relative; min-height:520px;}
+  .scent-panel{
+    position:absolute; inset:0; display:grid; grid-template-columns:1fr 1fr; align-items:center;
+    opacity:0; visibility:hidden; transition:opacity .5s ease;
+  }
+  .scent-panel.active{opacity:1; visibility:visible; position:relative;}
+  .scent-panel .p-img{height:100%; overflow:hidden;}
+  .scent-panel .p-img img{height:100%; width:100%; object-fit:cover;}
+  .scent-panel .p-copy{padding:50px 46px;}
+  .scent-panel .p-copy .tag{
+    font-family:'Cairo',sans-serif; font-weight:700; font-size:13px;
+    border:1px solid var(--line); display:inline-block; padding:6px 16px; border-radius:30px; margin-bottom:20px;
+  }
+  .scent-panel .p-copy h3{font-size:30px; margin-bottom:14px;}
+  .scent-panel .p-copy p{color:var(--ivory-soft); opacity:.8; font-size:15.5px; margin-bottom:26px; max-width:400px;}
+
+  /* ===== HOW TO USE ===== */
+  .howto{padding:130px 0; background:var(--bg);}
+  .steps{display:grid; grid-template-columns:repeat(5,1fr); gap:0; position:relative; margin-top:20px;}
+  .steps::before{
+    content:''; position:absolute; top:29px; right:10%; left:10%; height:1px; background:var(--line);
+  }
+  .step{position:relative; padding:0 18px; text-align:center;}
+  .step .num{
+    width:58px; height:58px; border-radius:50%; background:var(--bg);
+    border:1px solid var(--gold); color:var(--gold-light);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Cairo',sans-serif; font-weight:800; font-size:20px;
+    margin:0 auto 22px; position:relative; z-index:2;
+  }
+  .step h4{font-family:'Cairo',sans-serif; font-size:16px; font-weight:700; margin-bottom:10px;}
+  .step p{font-size:13.5px; opacity:.65; color:var(--ivory-soft);}
+
+  /* ===== FOLLOW / COMMUNITY ===== */
+  .follow{padding:130px 0; background:var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .follow-banner{
+    display:flex; align-items:center; justify-content:space-between; gap:28px; flex-wrap:wrap;
+    background:linear-gradient(120deg, rgba(200,161,92,0.14), rgba(255,255,255,0.02));
+    border:1px solid var(--gold); border-radius:var(--radius); padding:44px 48px; margin-bottom:22px;
+  }
+  .follow-banner .fb-info{display:flex; align-items:center; gap:22px;}
+  .follow-banner .fb-ic{
+    width:62px; height:62px; flex:none; border-radius:50%; background:rgba(255,255,255,0.08);
+    display:flex; align-items:center; justify-content:center; color:var(--gold-light);
+  }
+  .follow-banner .fb-ic svg{width:28px; height:28px;}
+  .follow-banner h3{font-size:23px;}
+  .follow-banner p{color:var(--ivory-soft); opacity:.75; font-size:14.5px; margin-top:6px; max-width:400px;}
+  .follow-mini{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .mini-card{
+    background:rgba(255,255,255,0.03); border:1px solid var(--line); border-radius:var(--radius);
+    padding:34px 30px; text-align:center; transition:border-color .3s ease, transform .3s ease;
+  }
+  .mini-card:hover{border-color:var(--gold); transform:translateY(-4px);}
+  .mini-card .ic{
+    width:48px; height:48px; margin:0 auto 18px; border-radius:50%; background:rgba(255,255,255,0.06);
+    display:flex; align-items:center; justify-content:center; color:var(--gold-light);
+  }
+  .mini-card .ic svg{width:21px; height:21px;}
+  .mini-card h4{font-size:16.5px; margin-bottom:6px;}
+  .mini-card span{display:block; font-size:13px; opacity:.6; margin-bottom:18px; color:var(--ivory-soft);}
+
+  /* ===== CONTACT / FOOTER ===== */
+  footer{background:var(--bg); padding-top:90px;}
+  .foot-grid{display:grid; grid-template-columns:1.3fr 1fr 1fr 1fr; gap:50px; padding-bottom:60px; border-bottom:1px solid var(--line);}
+  .foot-brand .logo{margin-bottom:16px;}
+  .foot-brand p{color:var(--ivory-soft); opacity:.65; font-size:14.5px; max-width:280px;}
+  .foot-social{display:flex; gap:12px; margin-top:22px;}
+  .foot-col h5{font-family:'Cairo',sans-serif; font-size:15px; font-weight:700; margin-bottom:20px; color:var(--gold-light);}
+  .foot-col ul li{margin-bottom:13px; font-size:14.5px; opacity:.75;}
+  .foot-col ul li a:hover{color:var(--gold-light); opacity:1;}
+  .foot-col ul li{display:flex; align-items:center; gap:10px;}
+  .foot-col ul li svg{width:15px; height:15px; flex:none; opacity:.8;}
+  .foot-bottom{
+    display:flex; justify-content:space-between; align-items:center; padding:26px 0; font-size:13px; opacity:.55; flex-wrap:wrap; gap:10px;
+  }
+
+  /* ===== FLOATING SOCIAL BUTTONS ===== */
+  .float-stack{position:fixed; bottom:28px; left:28px; z-index:200; display:flex; flex-direction:column; gap:14px; align-items:flex-start;}
+  .fb-float, .wa-float{
+    width:56px; height:56px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 24px rgba(0,0,0,0.35);
+    transition:transform .25s ease;
+  }
+  .fb-float{background:#1877F2;}
+  .wa-float{background:#25D366; width:44px; height:44px;}
+  .fb-float:hover, .wa-float:hover{transform:scale(1.08);}
+  .fb-float svg{width:26px; height:26px; fill:#fff;}
+  .wa-float svg{width:21px; height:21px; fill:#fff;}
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 980px){
+    nav{display:none;}
+    .burger{display:block;}
+    .about-grid{grid-template-columns:1fr; gap:50px;}
+    .about-media{order:2;}
+    .pillars{grid-template-columns:1fr;}
+    .scent-layout{grid-template-columns:1fr;}
+    .scent-tabs{display:flex; overflow-x:auto; gap:6px;}
+    .scent-tab{flex:none; width:auto;}
+    .scent-panel{grid-template-columns:1fr;}
+    .scent-panel .p-img{height:260px;}
+    .steps{grid-template-columns:1fr 1fr; row-gap:44px;}
+    .steps::before{display:none;}
+    .foot-grid{grid-template-columns:1fr 1fr; gap:40px;}
+  }
+  @media (max-width: 600px){
+    .container{padding:0 20px;}
+    .hero-stats{gap:28px;}
+    .steps{grid-template-columns:1fr 1fr;}
+    .foot-grid{grid-template-columns:1fr;}
+    .follow-banner{flex-direction:column; text-align:center; justify-content:center;}
+    .follow-mini{grid-template-columns:1fr;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .strip-track{animation:none;}
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header id="site-header">
+  <div class="container nav-inner">
+    <a href="#top" class="logo">LIND<span>A</span></a>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="#about">المنتج</a></li>
+        <li><a href="#scents">الروائح</a></li>
+        <li><a href="#howto">طريقة الاستخدام</a></li>
+        <li><a href="#follow">تابعينا</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a class="icon-link" href="https://instagram.com/linda.eg1" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+      </a>
+      <a class="icon-link" href="https://www.facebook.com/linda.eg.2" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.9h2.6l.4-3.1h-3v-2c0-.9.3-1.5 1.6-1.5H16V3.3C15.7 3.2 14.7 3 13.5 3c-2.4 0-4.1 1.5-4.1 4.2v2.3H6.8v3.1h2.6V21h4.1z"/></svg>
+      </a>
+      <a class="btn btn-primary" style="padding:11px 22px; font-size:14px;" href="https://www.facebook.com/linda.eg.2" target="_blank" rel="noopener">تابعينا على فيسبوك</a>
+      <button class="burger" id="burger" aria-label="menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="container hero-inner">
+    <div class="hero-kicker"><span class="dot"></span> عجينة طبيعية 100% — Al-Ahmadi Production</div>
+    <h1>نعومة تدوم، من غير <em>ولا وجعة</em></h1>
+    <p class="lede">عجينة LINDA لإزالة الشعر من الجذور — وصفة طبيعية بالكامل، بتلمّس بشرتك برفق، مناسبة للوجه وأدق المناطق الحساسة، وبتسيبلك بشرة ناعمة لفترة أطول.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://www.facebook.com/linda.eg.2" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.9h2.6l.4-3.1h-3v-2c0-.9.3-1.5 1.6-1.5H16V3.3C15.7 3.2 14.7 3 13.5 3c-2.4 0-4.1 1.5-4.1 4.2v2.3H6.8v3.1h2.6V21h4.1z"/></svg>
+        تابعينا على فيسبوك
+      </a>
+      <a class="btn btn-outline" href="#howto">طريقة الاستخدام</a>
+    </div>
+    <div class="hero-stats">
+      <div><b>100%</b><span>مكونات طبيعية</span></div>
+      <div><b>0</b><span>ألم أثناء الاستخدام</span></div>
+      <div><b>4</b><span>روائح مختارة بعناية</span></div>
+      <div><b>3+1</b><span>عرض خاص 150 جم</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STRIP ===== -->
+<div class="strip">
+  <div class="strip-track" id="strip-track">
+    <span>100% Natural</span>
+    <span>Pain-Free</span>
+    <span>For Face &amp; Sensitive Areas</span>
+    <span>3+1 عرض خاص</span>
+    <span>150 جم</span>
+    <span>100% Natural</span>
+    <span>Pain-Free</span>
+    <span>For Face &amp; Sensitive Areas</span>
+    <span>3+1 عرض خاص</span>
+    <span>150 جم</span>
+  </div>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="about-media">
+      <div class="frame"></div>
+      <img src="images/rose.jpg" alt="LINDA White Paste - Rose">
+    </div>
+    <div class="about-copy">
+      <span class="eyebrow">عن المنتج</span>
+      <h2>وصفة طبيعية توارثتها الأجيال، بلمسة LINDA العصرية</h2>
+      <p>عجينة LINDA مصنوعة من مكونات طبيعية بالكامل، بدون أي إضافات كيميائية قاسية على البشرة. قوامها المتماسك يمسك بالشعرة من جذورها فينزعها بحركة واحدة سريعة، فتحصلين على نعومة تدوم لفترة أطول من الحلاقة التقليدية.</p>
+      <p>كل عبوة 150 جرام، ومتوفرة الآن بعرض 3+1 ليكفيكِ لفترة أطول. من إنتاج الأحمدي لإزالة الشعر ومستحضرات التجميل.</p>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c-1.5 4-6 5-6 10a6 6 0 0 0 12 0c0-5-4.5-6-6-10z"/></svg></div>
+          <div><h4>طبيعية 100%</h4><p>بدون مواد كيميائية قاسية على البشرة</p></div>
+        </div>
+        <div class="pillar">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.5-9.5-9C1 8.5 3 4.8 6.5 4.5 8.7 4.3 10.6 5.6 12 7.5 13.4 5.6 15.3 4.3 17.5 4.5 21 4.8 23 8.5 21.5 12 19 16.5 12 21 12 21z"/></svg></div>
+          <div><h4>بدون ألم</h4><p>تجربة إزالة شعر هادئة ومريحة</p></div>
+        </div>
+        <div class="pillar">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3.2"/><path d="M6 21c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg></div>
+          <div><h4>للوجه والمناطق الحساسة</h4><p>مصمّمة خصيصًا للبشرة الرقيقة</p></div>
+        </div>
+        <div class="pillar">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
+          <div><h4>عرض 3+1</h4><p>عبوة 150 جم بسعر مناسب لعائلتك</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SCENTS ===== -->
+<section class="scents" id="scents">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">تشكيلة الروائح</span>
+      <h2>اختاري الرائحة التي تناسبك</h2>
+      <p>أربع روائح مختلفة لتجربة تناسب مزاجك ونوع بشرتك، بنفس الفعالية والتركيبة الطبيعية.</p>
+    </div>
+
+    <div class="scent-layout">
+      <div class="scent-tabs" id="scent-tabs">
+        <button class="scent-tab active" data-scent="charcoal" style="--sw:var(--c-charcoal)">
+          <span class="swatch" style="background:var(--c-charcoal)"></span>
+          <span class="txt"><b>الفحم النشط</b><span>Charcoal Paste</span></span>
+        </button>
+        <button class="scent-tab" data-scent="rose">
+          <span class="swatch" style="background:var(--c-rose)"></span>
+          <span class="txt"><b>الورد</b><span>Rose</span></span>
+        </button>
+        <button class="scent-tab" data-scent="lavender">
+          <span class="swatch" style="background:var(--c-lavender)"></span>
+          <span class="txt"><b>اللافندر</b><span>Lavender</span></span>
+        </button>
+        <button class="scent-tab" data-scent="jasmine">
+          <span class="swatch" style="background:var(--c-jasmine)"></span>
+          <span class="txt"><b>الياسمين</b><span>Jasmine</span></span>
+        </button>
+      </div>
+
+      <div class="scent-stage">
+        <div class="scent-panel active" data-scent="charcoal">
+          <div class="p-img"><img src="images/charcoal.jpg" alt="LINDA Charcoal Paste"></div>
+          <div class="p-copy">
+            <span class="tag">للتنظيف العميق</span>
+            <h3>عجينة الفحم النشط</h3>
+            <p>بخلاصة الفحم النشط الطبيعي، تعمل على تنظيف البشرة أثناء إزالة الشعر وتترك إحساسًا بالانتعاش والنقاء.</p>
+            <a class="btn btn-outline" href="https://www.facebook.com/linda.eg.2" target="_blank" rel="noopener">شاهدي التفاصيل على فيسبوك</a>
+          </div>
+        </div>
+        <div class="scent-panel" data-scent="rose">
+          <div class="p-img"><img src="images/rose.jpg" alt="LINDA White Paste Rose"></div>
+          <div class="p-copy">
+            <span class="tag">نعومة ورقة</span>
+            <h3>عجينة الورد</h3>
+            <p>رائحة الورد الكلاسيكية تمنحك إحساسًا أنثويًا راقيًا مع كل استخدام، وبشرة ناعمة برائحة تدوم.</p>
+            <a class="btn btn-outline" href="https://www.facebook.com/linda.eg.2" target="_blank" rel="noopener">شاهدي التفاصيل على فيسبوك</a>
+          </div>
+        </div>
+        <div class="scent-panel" data-scent="lavender">
+          <div class="p-img"><img src="images/lavender.jpg" alt="LINDA White Paste Lavender"></div>
+          <div class="p-copy">
+            <span class="tag">هدوء واسترخاء</span>
+            <h3>عجينة اللافندر</h3>
+            <p>رائحة اللافندر الهادئة تحوّل روتين إزالة الشعر إلى لحظة استرخاء واسترجاع للطاقة.</p>
+            <a class="btn btn-outline" href="https://www.facebook.com/linda.eg.2" target="_blank" rel="noopener">شاهدي التفاصيل على فيسبوك</a>
+          </div>
+        </div>
+        <div class="scent-panel" data-scent="jasmine">
+          <div class="p-img"><img src="images/jasmine.jpg" alt="LINDA White Paste Jasmine"></div>
+          <div class="p-copy">
+            <span class="tag">انتعاش ونقاء</span>
+            <h3>عجينة الياسمين</h3>
+            <p>عبق الياسمين الأبيض يمنحك إحساسًا بالنقاء والانتعاش يستمر معك طوال اليوم.</p>
+            <a class="btn btn-outline" href="https://www.facebook.com/linda.eg.2" target="_blank" rel="noopener">شاهدي التفاصيل على فيسبوك</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW TO USE ===== -->
+<section class="howto" id="howto">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">طريقة الاستخدام</span>
+      <h2>خمس خطوات بسيطة لنعومة مثالية</h2>
+      <p>How to use: put the paste between your palms until it softens, then follow the steps below.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h4>ليّني العجينة</h4>
+        <p>ضعيها بين يديكِ حتى تلين وتصبح جاهزة للاستخدام</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h4>اعجنيها جيدًا</h4>
+        <p>دلّكيها عدة مرات حتى تصبح دبقة ومتماسكة تمامًا</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h4>افردي على الجسم</h4>
+        <p>مدّديها على الجلد باتجاه نمو الشعر</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h4>انزعي بالخطف</h4>
+        <p>انزعيها بحركة سريعة، بعكس اتجاه نمو الشعر</p>
+      </div>
+      <div class="step">
+        <div class="num">5</div>
+        <h4>كرّري العجن</h4>
+        <p>دلّكي العجينة قليلًا قبل استخدامها في منطقة أخرى</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOLLOW / COMMUNITY ===== -->
+<section class="follow" id="follow">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">مجتمع LINDA</span>
+      <h2>كوني جزء من عائلة <span class="gold">LINDA</span></h2>
+      <p>بننشر باستمرار نصائح للعناية بالبشرة، فيديوهات طريقة الاستخدام، وكل جديد عن المنتج — تابعينا وابقي قريبة منّا.</p>
+    </div>
+
+    <div class="follow-banner">
+      <div class="fb-info">
+        <div class="fb-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.9h2.6l.4-3.1h-3v-2c0-.9.3-1.5 1.6-1.5H16V3.3C15.7 3.2 14.7 3 13.5 3c-2.4 0-4.1 1.5-4.1 4.2v2.3H6.8v3.1h2.6V21h4.1z"/></svg></div>
+        <div>
+          <h3>LINDA على فيسبوك</h3>
+          <p>صفحتنا الرئيسية لكل جديد — تابعينا هناك أولًا لمتابعة كل التفاصيل والتحديثات أول بأول.</p>
+        </div>
+      </div>
+      <a class="btn btn-primary" href="https://www.facebook.com/linda.eg.2" target="_blank" rel="noopener">تابعي صفحتنا على فيسبوك</a>
+    </div>
+
+    <div class="follow-mini">
+      <div class="mini-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></div>
+        <h4>إنستجرام</h4>
+        <span>صور ولحظات يومية من عالم LINDA</span>
+        <a class="btn btn-outline" style="padding:9px 20px; font-size:13.5px;" href="https://instagram.com/linda.eg1" target="_blank" rel="noopener">تابعينا</a>
+      </div>
+      <div class="mini-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3.2-.4-4.6a2.6 2.6 0 0 0-1.8-1.8C18.3 5.2 12 5.2 12 5.2s-6.3 0-7.8.4A2.6 2.6 0 0 0 2.4 7.4C2 8.8 2 12 2 12s0 3.2.4 4.6a2.6 2.6 0 0 0 1.8 1.8c1.5.4 7.8.4 7.8.4s6.3 0 7.8-.4a2.6 2.6 0 0 0 1.8-1.8c.4-1.4.4-4.6.4-4.6zM10 15.2V8.8L15.5 12 10 15.2z"/></svg></div>
+        <h4>يوتيوب</h4>
+        <span>فيديوهات شرح طريقة الاستخدام بالتفصيل</span>
+        <a class="btn btn-outline" style="padding:9px 20px; font-size:13.5px;" href="https://youtube.com/@Linda-p5h1w" target="_blank" rel="noopener">اشتركي بالقناة</a>
+      </div>
+      <div class="mini-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.06-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18a7.9 7.9 0 0 1-4.03-1.1l-.29-.17-3 .79.8-2.93-.19-.3A7.96 7.96 0 1 1 12 20z"/></svg></div>
+        <h4>واتساب</h4>
+        <span>للاستفسارات والرد على أسئلتك مباشرة</span>
+        <a class="btn btn-outline" style="padding:9px 20px; font-size:13.5px;" href="https://wa.me/2001004076552" target="_blank" rel="noopener">راسلينا</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer id="contact">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="logo">LIND<span>A</span></a>
+        <p>عجينة طبيعية 100% لإزالة الشعر بدون ألم، مناسبة للوجه والمناطق الحساسة. من إنتاج الأحمدي لإزالة الشعر ومستحضرات التجميل.</p>
+        <div class="foot-social">
+          <a class="icon-link" href="https://www.facebook.com/linda.eg.2" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.9h2.6l.4-3.1h-3v-2c0-.9.3-1.5 1.6-1.5H16V3.3C15.7 3.2 14.7 3 13.5 3c-2.4 0-4.1 1.5-4.1 4.2v2.3H6.8v3.1h2.6V21h4.1z"/></svg>
+          </a>
+          <a class="icon-link" href="https://instagram.com/linda.eg1" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </a>
+          <a class="icon-link" href="https://youtube.com/@Linda-p5h1w" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3.2-.4-4.6a2.6 2.6 0 0 0-1.8-1.8C18.3 5.2 12 5.2 12 5.2s-6.3 0-7.8.4A2.6 2.6 0 0 0 2.4 7.4C2 8.8 2 12 2 12s0 3.2.4 4.6a2.6 2.6 0 0 0 1.8 1.8c1.5.4 7.8.4 7.8.4s6.3 0 7.8-.4a2.6 2.6 0 0 0 1.8-1.8c.4-1.4.4-4.6.4-4.6zM10 15.2V8.8L15.5 12 10 15.2z"/></svg>
+          </a>
+          <a class="icon-link" href="https://wa.me/2001004076552" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.06-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18a7.9 7.9 0 0 1-4.03-1.1l-.29-.17-3 .79.8-2.93-.19-.3A7.96 7.96 0 1 1 12 20z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>روابط سريعة</h5>
+        <ul>
+          <li><a href="#about">عن المنتج</a></li>
+          <li><a href="#scents">الروائح</a></li>
+          <li><a href="#howto">طريقة الاستخدام</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>الروائح</h5>
+        <ul>
+          <li>الفحم النشط</li>
+          <li>الورد</li>
+          <li>اللافندر</li>
+          <li>الياسمين</li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>خدمة العملاء</h5>
+        <ul>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2.1z"/></svg>
+            <a href="tel:+201004076552" dir="ltr">01004076552</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg>
+            <a href="mailto:Ahmadymuhammad5@gmail.com">Ahmadymuhammad5@gmail.com</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 LINDA — Al-Ahmadi Production for Hair Removal and Cosmetics</span>
+      <span>جميع الحقوق محفوظة</span>
+    </div>
+  </div>
+</footer>
+
+<div class="float-stack">
+  <a class="fb-float" href="https://www.facebook.com/linda.eg.2" target="_blank" rel="noopener" aria-label="تابعينا على فيسبوك">
+    <svg viewBox="0 0 24 24"><path d="M13.5 21v-7.9h2.6l.4-3.1h-3v-2c0-.9.3-1.5 1.6-1.5H16V3.3C15.7 3.2 14.7 3 13.5 3c-2.4 0-4.1 1.5-4.1 4.2v2.3H6.8v3.1h2.6V21h4.1z"/></svg>
+  </a>
+  <a class="wa-float" href="https://wa.me/2001004076552" target="_blank" rel="noopener" aria-label="تواصلي عبر واتساب">
+    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.06-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18a7.9 7.9 0 0 1-4.03-1.1l-.29-.17-3 .79.8-2.93-.19-.3A7.96 7.96 0 1 1 12 20zm4.4-5.9c-.24-.12-1.4-.7-1.62-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.44-1.34-1.68-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.4h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.4-.57 1.6-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.46-.28z"/></svg>
+  </a>
+</div>
+
+<script>
+  // header scroll state
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // mobile burger -> simple toggle of nav menu display
+  const burger = document.getElementById('burger');
+  const navMenu = document.getElementById('nav-menu');
+  burger.addEventListener('click', () => {
+    const open = navMenu.style.display === 'block';
+    navMenu.style.display = open ? 'none' : 'block';
+    if(!open){
+      navMenu.style.position='absolute';
+      navMenu.style.top='100%';
+      navMenu.style.right='0';
+      navMenu.style.left='0';
+      navMenu.style.background='rgba(20,18,16,0.98)';
+      navMenu.style.padding='20px 32px';
+    }
+  });
+
+  // scent switcher
+  const scentColors = {
+    charcoal:{soft:'var(--c-charcoal-soft)'},
+    rose:{soft:'var(--c-rose-soft)'},
+    lavender:{soft:'var(--c-lavender-soft)'},
+    jasmine:{soft:'var(--c-jasmine-soft)'}
+  };
+  const tabs = document.querySelectorAll('.scent-tab');
+  const panels = document.querySelectorAll('.scent-panel');
+  const scentsSection = document.querySelector('.scents');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const key = tab.dataset.scent;
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.querySelector(`.scent-panel[data-scent="${key}"]`).classList.add('active');
+      scentsSection.style.background = scentColors[key].soft;
+    });
+  });
+</script>
+</body>
+</html>
